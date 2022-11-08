@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import com.example.calculadora.componentes.MainContent
+import com.example.calculadora.componentes.Panel
 
 @Composable
 fun CalculadoraApp(
@@ -19,8 +20,8 @@ fun CalculadoraApp(
     CaluladoraTema
     {
         CalculadoraPantalla(
-            inputText: inputState.text,
-        outputText =outputState.text,
+            inputText: inputState. text,
+        outputText = outputState.text,
         onEvent = {
             viewModel.onEvent(it)
         }
@@ -50,7 +51,11 @@ fun CalculadoraPantalla(
 
 
             )
-            Panel()
+            Panel(
+                height = boxHeight,
+                width = boxWidth,
+                onEvent = onEvent
+            )
         }
 
     }
